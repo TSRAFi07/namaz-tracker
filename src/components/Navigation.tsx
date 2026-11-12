@@ -10,9 +10,20 @@ const navItems = [
   { name: "Dashboard", bn: "ড্যাশবোর্ড", path: "/", icon: "⌂" },
   { name: "Daily Amals", bn: "দৈনিক আমল", path: "/amals", icon: "♡" },
   { name: "History", bn: "ইতিহাস", path: "/history", icon: "▦" },
+  {
+    name: "Monthly Report",
+    bn: "মাসিক রিপোর্ট",
+    path: "/monthly-report",
+    icon: "📊",
+  },
   { name: "Quran Tracker", bn: "কুরআন ট্র্যাকার", path: "/quran", icon: "☪" },
   { name: "Prayer Times", bn: "নামাজের সময়", path: "/prayer-times", icon: "◷" },
-  { name: "Daily Hadith & Ayah", bn: "দৈনিক হাদিস ও আয়াত", path: "/daily", icon: "📖" },
+  {
+    name: "Daily Hadith & Ayah",
+    bn: "দৈনিক হাদিস ও আয়াত",
+    path: "/daily",
+    icon: "📖",
+  },
   { name: "Settings", bn: "সেটিংস", path: "/settings", icon: "⚙" },
 ];
 
@@ -81,7 +92,9 @@ export default function Navigation() {
                   }`}
                 >
                   <span className="text-xl">{item.icon}</span>
-                  <span>{language === "bn" ? item.bn : item.name}</span>
+                  <span>
+                    {language === "bn" ? item.bn : item.name}
+                  </span>
                 </Link>
               );
             })}
@@ -90,7 +103,7 @@ export default function Navigation() {
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:grid md:grid-cols-7 md:gap-1">
+      <div className="hidden md:grid md:grid-cols-4 lg:grid-cols-8 md:gap-1">
         {navItems.map((item) => {
           const active = pathname === item.path;
 
